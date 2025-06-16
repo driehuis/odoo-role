@@ -6,6 +6,7 @@
     owner: "{{ odoo_role_odoo_user }}"
     group: "{{ odoo_role_odoo_group }}"
     mode: 0644
+  tags: community_pip
 
 - name: Deploy community roles with pip
   pip:
@@ -14,6 +15,7 @@
   register: reg_pip
   become: yes
   become_user: "{{ odoo_role_odoo_user }}"
+  tags: community_pip
 
   # Using the output of pip, detect which packages have been installed,
   # both fresh or upgraded. Save the list with a register so that we can
