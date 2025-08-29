@@ -50,3 +50,4 @@
   register: reg_pip_upgraded
   changed_when: reg_pip_upgraded.stdout
   failed_when: false # noqa 306 "shell and pipefail". Both grep and sed must be able to fail
+  when: reg_pip.stdout is defined

@@ -252,7 +252,7 @@
     --logfile=/dev/stdout
     --log-level=warn
     --no-http
-  when: reg_pip_upgraded.stdout
+  when: reg_pip_upgraded.stdout is defined
   with_items: "{{ odoo_role_odoo_dbs }}"
   notify:
     - restart odoo
